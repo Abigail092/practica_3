@@ -1,6 +1,7 @@
 package app.curso.banco.main;
 
 import app.curso.banco.entidad.Cliente;
+import app.curso.banco.entidad.Gestor;
 
 public class Main {
 
@@ -22,8 +23,8 @@ public class Main {
 		// CREAR GESTOR CON IDOFICINA
 		
 		
-		Gestor g1 =new Gestor (24,"Anna","(+34) 777 222 333", 3);
-		g1.mostarInfo();
+		Gestor g1 = new Gestor(24,"Anna","(+34) 777 222 333", 3);
+		g1.mostrarInfo();
 		
 		
 	}

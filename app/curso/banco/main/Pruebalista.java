@@ -1,3 +1,5 @@
+/*
+
 package app.curso.banco.main;
 import java.util.ArrayList;
 public class Pruebalista {
@@ -49,3 +51,4 @@ public class Pruebalista {
 	}
 
 }
+*/

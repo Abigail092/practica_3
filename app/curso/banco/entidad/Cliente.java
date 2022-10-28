@@ -5,8 +5,9 @@ import java.util.HashMap;
 public class Cliente extends Persona {
 
 	private float totalDinero;
-	// cada cuenta tiene una clave de tipo String
+	// Cada cuenta tiene una clave de tipo String
 	// y una cantidad de dinero Float
+	
     private HashMap<String, Float> cuentas;
     
 	public Cliente() {
@@ -16,7 +17,7 @@ public class Cliente extends Persona {
 	public Cliente(int id, String nombre, String telefono, float totalDinero) {
 		super(id, nombre, telefono);
 		this.totalDinero = totalDinero;
-
+		this.cuentas=new HashMap<>();
 	}
 
 	public float getTotalDinero() {
@@ -40,8 +41,15 @@ public class Cliente extends Persona {
 		return this.totalDinero;
 	}
 
-	// retirar dinero
 
+	
+	public void abrirCuenta(String idCuenta, Float dinero){
+		this.cuentas.put(idCuenta, dinero);
+		ingresarDinero(dinero);
+		System.out.println("Abierta la cuenta" + idCuenta);
+	}
+	
+	
 	public float retirarDinero(float dinero) {
 		if (this.totalDinero - dinero >= 0) {
 			this.totalDinero -= dinero;
@@ -49,22 +57,10 @@ public class Cliente extends Persona {
 		return this.totalDinero;
 	}
 	
-	public void abrirCuenta(String idCuenta, Float dinero){
-		this.cuentas.put(idCuenta, dinero);
-		ingresarDinero(dinero);
-	}
 	
 	// Cerrar Cuenta
 	
-	public void cerrarCuenta(String idCuenta){
-		Float dineroEnCuenta = this.cuentas.get(idCuenta);
-		if (dineroEnCuenta != 0) {
-		retirarDinero(dineroEnCuenta);
-		this.cuentas.remove(idCuenta);
-		}else {
-			System.out.println("La cuenta no se puede borrar porque aún hay dinero");
-		}
-	}
+	
 	
 	public float ingresarDinero(String idCuenta, Float dinero) {
 		if (this.cuentas.get(idCuenta) != null) {
@@ -76,42 +72,32 @@ public class Cliente extends Persona {
 		return this.totalDinero;
 	}
 	
-	// Retirar Dinero 
 	public float retirarDinero(String idCuenta, Float dinero) {
-		if ((this.cuentas.get(idCuenta) != null) || (this.cuentas.get(idCuenta) <= dinero))  {
-			this.cuentas.put(idCuenta, this.cuentas.get(idCuenta) - dinero);
+		Float dineroEnCuenta = this.cuentas.get(idCuenta);
+		if (dineroEnCuenta != null) {
+			this.cuentas.put(idCuenta, dineroEnCuenta - dinero);
 			retirarDinero(dinero);
-		}else{
+			System.out.println("Se ha retirado " + dinero + " € de " + idCuenta);
+		} else {
 			System.out.println("La cuenta no existe");
 		}
 		return this.totalDinero;
-		
-		// se crea vacio
-		
-		Cliente cliente2 = new cliente (1,"Anna Martinez ", " 623 789 123 ");
-		cliente2.setId(3);
-		
-		cliente.abrirCuenta ("ES123" , 789);
-		
-		cliente.abrirCuenta ("ES678", 30f);
-		
-	    cliente.mostrarInfo();
-	    
-	    cliente.retirarDinero("ES123, 20f");
-	    
-	    cliente.mostrarInfo();
-	    
-	    cliente.ingresarDinero("ES678", 200f);
-	    
-	    cliente.mostrarInfo();
-	    
-	    cliente.cerrarCuenta("ES123");
-	    
-	    
-		HashMap<>
-		
 	}
 	
+	public void cerrarCuenta(String idCuenta){
+		Float dineroEnCuenta = this.cuentas.get(idCuenta);
+		if (dineroEnCuenta != 0) {
+		retirarDinero(idCuenta, dineroEnCuenta);
+		this.cuentas.remove(idCuenta);
+		}else {
+			System.out.println("La cuenta no se puede borrar porque aún hay dinero");
+		}
+	}
 	
+	public void mostrarCuentas() {
+		this.cuentas.forEach((idCuenta, dinero) -> {
+			System.out.println("> " + idCuenta + ": " + dinero + " €");
+		});
 	
+	}
 }
