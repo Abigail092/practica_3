@@ -30,7 +30,6 @@ public class Gestor extends Persona {
 		System.out.println("idOficina: " + this.idOficina + " €");
 		}
 
-	
 	// ingresar dinero  -- Repetido en Cliente
 
 	/*
