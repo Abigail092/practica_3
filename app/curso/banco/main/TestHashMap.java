@@ -11,13 +11,13 @@ public class TestHashMap {
 		 
 		 String enPosicion2 = mapa.get (2);
 		 
-		 System.out.println("En la posicion e está " + enPosicion2);
+		 System.out.println("En la posicion 2 está " + enPosicion2);
 		 
 		 mapa.put(2, "Anna");
 		 
 		 enPosicion2 = mapa.get(2);
 		 
-		 System.out.println("En la posición2 esta " + enPosicion2);
+		 System.out.println("En la posición 2 esta " + enPosicion2);
 		 
 		 		
 	//	for(String strin: mapa) {
