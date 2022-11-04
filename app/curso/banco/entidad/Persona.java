@@ -5,7 +5,10 @@ public class Persona {
 	protected int id;
 	protected String nombre;
 	protected String telefono;
-
+	protected String username;
+	protected String password;
+	
+	
 	// CONSTRICTOR POR DEFECTO
 
 	Persona() {

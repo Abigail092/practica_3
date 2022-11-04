@@ -9,7 +9,7 @@ package app.curso.banco.entidad;
 			
 			protected char tipoReceptor;
 			protected int idReceptor;
-			
+			   
 			protected String textoMensaje;
 			
 			
@@ -92,7 +92,8 @@ package app.curso.banco.entidad;
 		return TIPO_GESTOR;
 	}
 	
-	
-	
+	public int getMensaje() {
+		return 	id;
+	}
 
 }

@@ -14,7 +14,7 @@ public transferencia (
 		int idEmisor,
 		char tipoReceptor,
 		int idReceptor,
-		String textoMensaje 
+		String textoMensaje,
 		float dinero
 		) {
 	super (id, tipoEmisor, idEmosor, ),

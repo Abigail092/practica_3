@@ -81,10 +81,13 @@ public class Main {
 				if (loginCorrecto) {
 					
 					System.out.println ("Correcto");
-				} else {
+				} else { 
+					System.out.println ("Incorrecto");
+				
+				
+			}
 				
 				break;
-			}
 			
 		  case 19:
 			
@@ -93,6 +96,9 @@ public class Main {
 			Cliente Cliente ParaRegistro = clientes.get(idARegistrar);
 			
 			break;
+				
+			default:
+				System.out.println("Opción desconocida");
 				
 				
 			}
@@ -106,7 +112,5 @@ public class Main {
 		
 		g2.mostrarInfo();
 		}
-		
-	}
 
-
+}
