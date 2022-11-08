@@ -46,6 +46,7 @@ public class Main {
 			menuSeleccionado = sc.nextInt();
 
 			switch (menuSeleccionado) {
+			
 			case 0:
 				System.out.println("Saliendo...");
 				break;
@@ -60,21 +61,22 @@ public class Main {
 				System.out.println("Insertado un gestor");
 				break;
 				
+				
 			case 18:
 				System.out.println("Login clientes");
 				System.out.println("Id del clientes");
 				int idCliente = keyboard.nextInt();
-				Cliente clienteParaLogin = clientes.get (idCliente);
+				Cliente clienteParaLogin = cliente.get (idCliente);
 				
 				System.out.println("Usuario ");
 				String usarname = keyboard.nextInt();
 				
 				System.out.println(" Contraseña ");
-				Strign pass = keyboard.next();
+				String pass = keyboard.next();
 				
 				String passCliente = clienteParaLogin.getPassword();
 				
-				boolean tienePass = passCliente ! = null;
+				boolean tienePass = passCliente != null;
 				
 				boolean loginCorrecto = passCliente.equals(pass) && tienePass;
 				
@@ -108,6 +110,7 @@ public class Main {
 		g2.setNombre("Cansalmas");
 		
 		//Borrar gestor
+		
 		g2=null;
 		
 		g2.mostrarInfo();

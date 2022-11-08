@@ -1,6 +1,6 @@
 package app.curso.banco.entidad;
 
-	public  class Mensaje (
+	public  class Mensaje {
 	
 			protected int id;
 			

@@ -9,7 +9,7 @@ import app.curso.banco.entidad.Gestor;
 public class ConsolaBanco {
 
 	public static void main(String[] args) {
-		// TODO Auto-generated method stub
+	
 
 		HashMap<Integer, Cliente > listaCliente = new HashMap <> ();
 		HashMap<Integer, Gestor> listaGestor = new HashMap <> ();	
